@@ -1,6 +1,7 @@
 package com.hxj.empublite;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -23,8 +24,12 @@ public class EmPubLiteActivity extends Activity {
 
         switch (item.getItemId()){
             case R.id.help:
+                Intent intentHelp = new Intent(EmPubLiteActivity.this, SimpleContentActivity.class);
+                startActivity(intentHelp);
                 return true;
             case R.id.about:
+                Intent intentAbout = new Intent(EmPubLiteActivity.this, SimpleContentActivity.class);
+                startActivity(intentAbout);
                 return true;
         }
 

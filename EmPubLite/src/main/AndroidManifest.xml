@@ -6,7 +6,7 @@
         android:largeScreens="true"
         android:normalScreens="true"
         android:smallScreens="false"
-        android:xlargeScreens="true"></supports-screens>
+        android:xlargeScreens="true" />
 
     <application
         android:allowBackup="false"
@@ -22,6 +22,7 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".SimpleContentActivity"></activity>
     </application>
 
 </manifest>
