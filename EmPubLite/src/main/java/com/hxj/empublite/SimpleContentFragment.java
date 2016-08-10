@@ -34,7 +34,7 @@ public class SimpleContentFragment extends WebViewFragment {
         getWebView().getSettings().setSupportZoom(true);
 
         getWebView().loadUrl(getPage());
-        
+
         return result;
     }
 
