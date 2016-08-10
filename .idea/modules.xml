@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/EmPubLite/EmPubLite.iml" filepath="$PROJECT_DIR$/EmPubLite/EmPubLite.iml" />
+      <module fileurl="file://$PROJECT_DIR$/theBusyCodeGuideRepo.iml" filepath="$PROJECT_DIR$/theBusyCodeGuideRepo.iml" />
+    </modules>
+  </component>
+</project>
