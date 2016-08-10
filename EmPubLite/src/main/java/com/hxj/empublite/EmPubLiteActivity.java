@@ -26,6 +26,8 @@ public class EmPubLiteActivity extends Activity {
         findViewById(R.id.progressBar1).setVisibility(View.GONE);
         viewPager.setAdapter(adapter);
         viewPager.setVisibility(View.VISIBLE);
+
+
     }
 
     @Override
@@ -40,10 +42,12 @@ public class EmPubLiteActivity extends Activity {
         switch (item.getItemId()){
             case R.id.help:
                 Intent intentHelp = new Intent(EmPubLiteActivity.this, SimpleContentActivity.class);
+                intentHelp.putExtra(SimpleContentActivity.EXTRA_FILE, "file:///android_asset/misc/about.html");
                 startActivity(intentHelp);
                 return true;
             case R.id.about:
                 Intent intentAbout = new Intent(EmPubLiteActivity.this, SimpleContentActivity.class);
+                intentAbout.putExtra(SimpleContentActivity.EXTRA_FILE,"file:///android_asset/misc/about.html");
                 startActivity(intentAbout);
                 return true;
         }

@@ -20,7 +20,7 @@ public class SimpleContentFragment extends WebViewFragment {
         Bundle args = new Bundle();
         args.putString(KEY_FILE, file);
         f.setArguments(args);
-        return f;
+        return (f);
     }
 
 
