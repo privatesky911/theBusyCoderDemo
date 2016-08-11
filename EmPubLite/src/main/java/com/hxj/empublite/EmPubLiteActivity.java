@@ -76,6 +76,11 @@ public class EmPubLiteActivity extends Activity {
     public boolean onOptionsItemSelected(MenuItem item) {
 
         switch (item.getItemId()) {
+            case R.id.notes:
+                Intent intentNotes = new Intent(this, NoteActivity.class);
+                intentNotes.putExtra(NoteActivity.EXTRA_POSITION, viewPager.getCurrentItem());
+                startActivity(intentNotes);
+                return(true);
             case R.id.help:
                 Intent intentHelp = new Intent(EmPubLiteActivity.this, SimpleContentActivity.class);
                 intentHelp.putExtra(SimpleContentActivity.EXTRA_FILE, "file:///android_asset/misc/about.html");
