@@ -22,13 +22,13 @@ public class ContentsAdapter extends FragmentStatePagerAdapter {
     @Override
     public Fragment getItem(int position) {
         String path = contents.getChapterFile(position);
-        Log.d(TAG, "position: "+ position + ", path: " + path);
+        //Log.d(TAG, "position: "+ position + ", path: " + path);
         return SimpleContentFragment.newInstance("file:///android_asset/book/"+path);
     }
 
     @Override
     public int getCount() {
-        Log.d(TAG, "getCount()");
+        //Log.d(TAG, "getCount()");
         return contents.getChapterCount();
     }
 }

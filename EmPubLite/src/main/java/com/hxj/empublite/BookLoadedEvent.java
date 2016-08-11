@@ -11,11 +11,11 @@ public class BookLoadedEvent {
 
     public BookLoadedEvent(BookContents contents) {
         this.contents = contents;
-        Log.d(TAG, "BookLoadedEvent[ contents:" + ((contents == null) ? "null" : (contents.toString())) + " ]");
+        //Log.d(TAG, "BookLoadedEvent[ contents:" + ((contents == null) ? "null" : (contents.toString())) + " ]");
     }
 
     public BookContents getBook(){
-        Log.d(TAG, "getBook()");
+        //Log.d(TAG, "getBook()");
         return contents;
     }
 }

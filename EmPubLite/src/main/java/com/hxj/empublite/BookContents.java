@@ -13,7 +13,6 @@ public class BookContents {
 
     public int getChapterCount()
     {
-        Log.d(TAG, "chapters.size: " +  chapters.size());
         return chapters.size();
     }
 
