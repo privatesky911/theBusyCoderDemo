@@ -1,1 +1,1 @@
-include ':EmPubLite'
+include ':EmPubLite', ':InternetAccessHURL'

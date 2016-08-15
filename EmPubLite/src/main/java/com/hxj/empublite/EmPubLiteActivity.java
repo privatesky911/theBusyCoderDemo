@@ -83,7 +83,7 @@ public class EmPubLiteActivity extends Activity {
                 return(true);
             case R.id.help:
                 Intent intentHelp = new Intent(EmPubLiteActivity.this, SimpleContentActivity.class);
-                intentHelp.putExtra(SimpleContentActivity.EXTRA_FILE, "file:///android_asset/misc/about.html");
+                intentHelp.putExtra(SimpleContentActivity.EXTRA_FILE, "file:///android_asset/misc/help.html");
                 startActivity(intentHelp);
                 return true;
             case R.id.about:
