@@ -1,1 +1,1 @@
-include ':EmPubLite', ':InternetAccessHURL', ':volley'
+include ':EmPubLite', ':InternetAccessHURL', ':volley', ':FauxSenderMNC'

@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">FauxSender</string>
+    <string name="no_message_supplied">No message supplied!</string>
+    <string name="share_subject">share_subject</string>
+    <string name="share_title">share title</string>
+    <string name="title_template">title_template</string>
+</resources>

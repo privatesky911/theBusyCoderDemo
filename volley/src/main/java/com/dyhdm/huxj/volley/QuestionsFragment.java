@@ -12,6 +12,8 @@ import android.widget.ArrayAdapter;
 import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
+import android.widget.Toast;
+
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import java.util.List;
@@ -53,6 +55,8 @@ public class QuestionsFragment extends ListFragment implements
 
     @Override
     public void onErrorResponse(VolleyError error) {
+        Toast.makeText(getActivity(), error.getMessage(),
+                Toast.LENGTH_LONG).show();
         Log.d(TAG, "onResponse");
     }
 
