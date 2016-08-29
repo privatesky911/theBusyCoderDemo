@@ -1,1 +1,1 @@
-include ':EmPubLite', ':InternetAccessHURL', ':volley', ':FauxSenderMNC'
+include ':EmPubLite', ':InternetAccessHURL', ':volley', ':FauxSenderMNC', ':AutoReboot'
