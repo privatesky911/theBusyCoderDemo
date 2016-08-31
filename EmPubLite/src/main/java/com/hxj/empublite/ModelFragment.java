@@ -15,6 +15,8 @@ import android.util.Log;
 import com.google.gson.Gson;
 
 import java.io.BufferedReader;
+import java.io.File;
+import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
@@ -48,9 +50,23 @@ public class ModelFragment extends Fragment {
     @Override
     public void onAttach(Activity activity) {
         super.onAttach(activity);
+        EventBus.getDefault().register(this);
         //Log.d(TAG, "onAttach (Activity), contents: " + ((contents == null) ? "null" : (contents.toString())));
         if (contents == null) {
             new LoadThread(activity).start();
+        }
+    }
+
+    @Override
+    public void onDetach() {
+        EventBus.getDefault().unregister(this);
+        super.onDetach();
+    }
+
+    @SuppressWarnings("unused")
+    public void onEventBackgroundThread(BookUpdatedEvent event) {
+        if (getActivity()!=null) {
+            new LoadThread(getActivity()).start();
         }
     }
 
@@ -60,33 +76,46 @@ public class ModelFragment extends Fragment {
     }
 
     private class LoadThread extends Thread{
-        private Context context = null;
+        private Context ctxt  =null;
         LoadThread(Context context) {
             super();
-            this.context = context.getApplicationContext();
+            this.ctxt = context.getApplicationContext();
         }
-
         @Override
         public void run() {
-            synchronized (this) {
-                prefs = PreferenceManager.getDefaultSharedPreferences(context);
-            }
-
             Process.setThreadPriority(Process.THREAD_PRIORITY_BACKGROUND);
-            Gson gson = new Gson();
-            //Log.d("LoadThread", "run ...");
+            synchronized(this) {
+                prefs=PreferenceManager.getDefaultSharedPreferences(ctxt);
+            }
+            Gson gson=new Gson();
+            File baseDir=
+                    new File(ctxt.getFilesDir(),
+                            DownloadCheckService.UPDATE_BASEDIR);
             try {
-                InputStream is = context.getAssets().open("book/contents.json");
-                BufferedReader reader = new BufferedReader(new InputStreamReader(is));
-
-                synchronized (this) {
-                    contents = gson.fromJson(reader,BookContents.class);
+                InputStream is;
+                Log.d(TAG, "LoadThread, run baseDir: " + baseDir);
+                if (baseDir.exists()) {
+                    is=new FileInputStream(new File(baseDir, "contents.json"));
+                }
+                else {
+                    is=ctxt.getAssets().open("book/contents.json");
+                }
+                BufferedReader reader=
+                        new BufferedReader(new InputStreamReader(is));
+                synchronized(this) {
+                    contents=gson.fromJson(reader, BookContents.class);
+                }
+                is.close();
+                if (baseDir.exists()) {
+                    contents.setBaseDir(baseDir);
                 }
                 EventBus.getDefault().post(new BookLoadedEvent(contents));
-            } catch (IOException e) {
-                Log.e(getClass().getSimpleName(), "Exception parsing json", e);
+            }
+            catch (IOException e) {
+                Log.e(getClass().getSimpleName(), "Exception parsing JSON", e);
             }
         }
+
     }
 
     public SharedPreferences getPrefs(){

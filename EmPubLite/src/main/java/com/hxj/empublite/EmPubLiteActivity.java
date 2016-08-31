@@ -95,6 +95,10 @@ public class EmPubLiteActivity extends Activity {
                 Intent intentSettings = new Intent(EmPubLiteActivity.this, Preferences.class);
                 startActivity(intentSettings);
                 return true;
+            case R.id.update:
+                Log.d(TAG, "download button clicked");
+                startService(new Intent(this, DownloadCheckService.class));
+                return true;
         }
 
         return (super.onOptionsItemSelected(item));
