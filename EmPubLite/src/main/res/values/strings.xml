@@ -19,5 +19,6 @@
     <string name="yes">Yes</string>
     <string name="no">No</string>
     <string name="delete_hint">Are you sure you want to delete?</string>
+    <string name="share">Share</string>
 
 </resources>
