@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">PrintDemo</string>
+    <string name="title_activity_main">MainActivity</string>
+    <string name="str_bitmap">Bit Map</string>
+</resources>
