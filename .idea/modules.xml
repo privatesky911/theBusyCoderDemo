@@ -3,6 +3,7 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/AutoReboot/AutoReboot.iml" filepath="$PROJECT_DIR$/AutoReboot/AutoReboot.iml" />
+      <module fileurl="file://$PROJECT_DIR$/DevinfoBarcode/DevinfoBarcode.iml" filepath="$PROJECT_DIR$/DevinfoBarcode/DevinfoBarcode.iml" />
       <module fileurl="file://$PROJECT_DIR$/EmPubLite/EmPubLite.iml" filepath="$PROJECT_DIR$/EmPubLite/EmPubLite.iml" />
       <module fileurl="file://$PROJECT_DIR$/FauxSenderMNC/FauxSenderMNC.iml" filepath="$PROJECT_DIR$/FauxSenderMNC/FauxSenderMNC.iml" />
       <module fileurl="file://$PROJECT_DIR$/InternetAccessHURL/InternetAccessHURL.iml" filepath="$PROJECT_DIR$/InternetAccessHURL/InternetAccessHURL.iml" />

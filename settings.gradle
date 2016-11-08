@@ -1,1 +1,1 @@
-include ':EmPubLite', ':InternetAccessHURL', ':volley', ':FauxSenderMNC', ':AutoReboot', ':printdemo', ':headerdetaillist'
+include ':EmPubLite', ':InternetAccessHURL', ':volley', ':FauxSenderMNC', ':AutoReboot', ':printdemo', ':headerdetaillist', 'DevinfoBarcode'
