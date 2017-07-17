@@ -1,12 +1,11 @@
 import datetime
 
 from django.http import HttpResponse
-
+from django.template.response import TemplateResponse
 
 def current_datetime(request):
-    now = datetime.datetime.now();
-    html = "<html><body>It is now %s.</body></html>" % now
-    return HttpResponse(html)
+    now = datetime.datetime.now()
+    return TemplateResponse(request, 'current_datetime.html', {'current_date': now}, )
 
 
 def hours_ahead(request, offset):
