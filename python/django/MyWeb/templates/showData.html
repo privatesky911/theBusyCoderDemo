@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>所有数据</title>
+    <style>
+        table, td {
+            font: 100% Arial, Helvetica, sans-serif;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 1em 0;
+        }
+
+        th, td {
+            text-align: left;
+            padding: .5em;
+            border: 1px solid #fff;
+        }
+
+        th {
+            background: #328aa4 url(tr_back.gif) repeat-x;
+            color: #fff;
+        }
+
+        td {
+            background: #e5f1f4;
+        }
+    </style>
+</head>
+<body>
+<div id="container">
+    <div id="content">
+        <table cellspacing="0" cellpadding="0">
+            <tr>
+                <th>书名</th>
+                <th>作者</th>
+                <th>出版商</th>
+                <th>出版日期</th>
+            </tr>
+            {% for d in alldata %}
+                <tr>
+                    <td>{{ d.title }}</td>
+                    <td>{{ d.authors }}</td>
+                    <td>{{ d.publisher.name }}</td>
+                    <td>{{ d.publication_date }}</td>
+                </tr>
+            {% endfor %}
+        </table>
+    </div>
+</div>
+</body>
+</html>
