@@ -15,7 +15,7 @@ Including another URLconf
 """
 from django.conf.urls import url
 from django.contrib import admin
-from books.views import index, addBook, saveInfo, showData
+from books.views import index, addBook, saveInfo, showData, search
 
 
 urlpatterns = [
@@ -24,4 +24,5 @@ urlpatterns = [
     url(r'^addBook/', addBook),
     url(r'^saveInfo/', saveInfo),
     url(r'^showData/', showData),
+    url(r'^search/', search),
 ]
