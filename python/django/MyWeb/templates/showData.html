@@ -43,7 +43,12 @@
             {% for d in alldata %}
                 <tr>
                     <td>{{ d.title }}</td>
-                    <td>{{ d.authors }}</td>
+                    <!--<td>{{ d.authors}}</td>-->
+                    <td>
+                        {% for author in d.authors.all %}
+                            {{ author.first_name }} {{ author.last_name }} {% if not forloop.last %} | {% endif %}
+                        {% endfor %}
+                    </td>
                     <td>{{ d.publisher.name }}</td>
                     <td>{{ d.publication_date }}</td>
                 </tr>
